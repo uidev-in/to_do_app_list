@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { FiX } from "react-icons/fi";
 import { removeToDo, handleCheckBox } from "../../store/slice/todoSlice";
+import { FiFeather } from "react-icons/fi";
 
 export default function ToDoList() {
   const dispatch = useDispatch();
@@ -9,9 +10,16 @@ export default function ToDoList() {
 
   console.log(to_do_list);
 
+  if (to_do_list === null || to_do_list.length === 0) {
+    return <>
+      <div className="p-3">
+      <p style={{color:"#444857"}}><FiFeather /> There is no To Do...</p>
+      </div>
+    </>;
+  }
   return (
     <>
-      <div className="p-5">
+      <div className="py-3">
         {Array.isArray(to_do_list) &&
           to_do_list.map((todo) => (
             <div key={todo?.id} className="d-flex gap-3">
@@ -33,7 +41,7 @@ export default function ToDoList() {
                   className="mb-0"
                   style={
                     todo?.completed === true
-                      ? { textDecoration: "line-through" }
+                      ? { textDecoration: "line-through", color: "#b3b3b3" }
                       : { textDecoration: "none" }
                   }
                 >

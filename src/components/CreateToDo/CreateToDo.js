@@ -22,25 +22,18 @@ export default function CreateToDo() {
 
   return (
     <>
-      <section className="pt-5">
-        <Container>
-          <Row>
-            <Col md={12}>
-              <p>Add your todolist</p>
-              <form onSubmit={handleSubmit}>
+      <section className="">
+              <form className="d-flex gap-3 align-items-center" onSubmit={handleSubmit}>
                 <input
                   type="text"
                   name="todo"
-                  placeholder="write to do"
+                  placeholder="New Todo"
                   value={todoValue}
                   onChange={(e)=>{setToDoValue(e.target.value)}}
                   required
                 />
-                <button type="submit" className="mt-2">Add</button>
+                <button type="submit" className="rounded">Add</button>
               </form>
-            </Col>
-          </Row>
-        </Container>
       </section>
     </>
   );
