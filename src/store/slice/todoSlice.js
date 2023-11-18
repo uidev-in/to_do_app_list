@@ -1,11 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const INIT_STATE = {
-  to_do_list: [
-    { id: 1, todo: "I have to apply jobs on linkedin", completed: false },
-    { id: 2, todo: "Marvel website assignment task", completed: true },
-    { id: 3, todo: "Create todo app in react with redux", completed: false },
-  ],
+  to_do_list: [],
   isLoading: false,
   error: null,
 };
@@ -38,4 +34,4 @@ export const todoSlice = createSlice({
 });
 
 export default todoSlice.reducer;
-export const { addToDo, removeToDo,handleCheckBox } = todoSlice.actions;
+export const { addToDo, removeToDo, handleCheckBox } = todoSlice.actions;

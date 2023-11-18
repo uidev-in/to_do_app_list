@@ -16,11 +16,9 @@ export default function CreateToDo() {
             todo:todoValue,
             completed:false
         }
-
         setToDoValue('')
         dispatch(addToDo(todoObj));
     }
-    console.log(todoValue)
 
   return (
     <>
